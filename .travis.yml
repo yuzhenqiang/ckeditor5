@@ -28,7 +28,9 @@ script:
 after_script:
 #- export END_TIME=$( date +%s )
 #- ckeditor5-dev-tests-notify-travis-status
-#env:
+env:
 #  jobs:
 #  - TRAVIS_JOB_TYPE=Tests
 #  - TRAVIS_JOB_TYPE=Validation
+  global:
+  - NODE_OPTIONS="--max_old_space_size=8192"
