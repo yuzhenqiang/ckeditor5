@@ -29,9 +29,7 @@ fi
 echo "Starting the manual test server..."
 
 # `yarn run` does not forward SIGTERM to process, so we need to use the command directly.
-node -e "console.log('V8 Total Heap Size:', (require('v8').getHeapStatistics().total_available_size / 1024 / 1024).toFixed(2), 'MB');"
-node --max_old_space_size=6144 node_modules/@ckeditor/ckeditor5-dev-tests/bin/test-manual.js $MANUAL_TEST_SERVER_OPTIONS
-#node --max_old_space_size=6144 node_modules/@ckeditor/ckeditor5-dev-tests/bin/test-manual.js $MANUAL_TEST_SERVER_OPTIONS &
+node --max_old_space_size=6144 node_modules/@ckeditor/ckeditor5-dev-tests/bin/test-manual.js $MANUAL_TEST_SERVER_OPTIONS &
 
 MANUAL_TEST_SERVER_PROCESS_ID=$!
 
