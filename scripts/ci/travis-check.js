@@ -23,24 +23,23 @@ const MAGENTA = '\x1B[35;1m';
 const NO_COLOR = '\x1B[0m';
 
 // Tests + Code coverage.
-if ( TRAVIS_JOB_TYPE === 'Tests' ) {
-	console.log( `\n${ CYAN }Running the "Tests" build.${ NO_COLOR }\n` );
-
-	exec( 'node', './scripts/ci/check-packages-code-coverage.js' );
-}
+// if ( TRAVIS_JOB_TYPE === 'Tests' ) {
+// 	console.log( `\n${ CYAN }Running the "Tests" build.${ NO_COLOR }\n` );
+// 	exec( 'node', './scripts/ci/check-packages-code-coverage.js' );
+// }
 
 // Verifying the code style.
-if ( TRAVIS_JOB_TYPE === 'Validation' ) {
+// if ( TRAVIS_JOB_TYPE === 'Validation' ) {
 	console.log( `\n${ CYAN }Running the "Validation" build.${ NO_COLOR }\n` );
 
 	// Linters.
-	exec( 'yarn', 'run', 'lint' );
-	exec( 'yarn', 'run', 'stylelint' );
+	// exec( 'yarn', 'run', 'lint' );
+	// exec( 'yarn', 'run', 'stylelint' );
 
 	// Verifying manual tests.
 	exec( 'yarn', 'run', 'dll:build' );
 	exec( 'sh', './scripts/check-manual-tests.sh', '-r', 'ckeditor5', '-f', 'ckeditor5' );
-}
+// }
 
 /**
  * Executes the specified command. E.g. for displaying the Node's version, use:
