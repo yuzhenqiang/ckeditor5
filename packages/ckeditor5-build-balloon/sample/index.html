@@ -31,10 +31,14 @@
 	BalloonEditor.create( document.querySelector( '#editor' ) )
 		.then( editor => {
 			window.editor = editor;
+			editor.onAddKnowledge = (text) => {
+				console.log('selected:', text)
+			}
 		} )
 		.catch( error => {
 			console.error( 'There was a problem initializing the editor.', error );
 		} );
+
 </script>
 
 </body>
