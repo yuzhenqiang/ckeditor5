@@ -19,6 +19,7 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import AddKnowledge from './AddKnowledgePlugin'
+import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace'
 
 export default class BalloonEditor extends BalloonEditorBase {}
 
@@ -36,7 +37,8 @@ BalloonEditor.builtinPlugins = [
 	TextTransformation,
 	Alignment,
 	Highlight,
-	AddKnowledge
+	AddKnowledge,
+	FindAndReplace
 ];
 
 // Editor configuration.
